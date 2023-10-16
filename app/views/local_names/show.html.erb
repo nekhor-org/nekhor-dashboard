@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @local_name %>
+
+<div>
+  <%= link_to "Edit this local name", edit_local_name_path(@local_name) %> |
+  <%= link_to "Back to local names", local_names_path %>
+
+  <%= button_to "Destroy this local name", @local_name, method: :delete %>
+</div>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Country names</h1>
+
+<div id="country_names">
+  <% @country_names.each do |country_name| %>
+    <%= render country_name %>
+    <p>
+      <%= link_to "Show this country name", country_name %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New country name", new_country_name_path %>

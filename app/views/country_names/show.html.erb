@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @country_name %>
+
+<div>
+  <%= link_to "Edit this country name", edit_country_name_path(@country_name) %> |
+  <%= link_to "Back to country names", country_names_path %>
+
+  <%= button_to "Destroy this country name", @country_name, method: :delete %>
+</div>

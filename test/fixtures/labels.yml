@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  my_favorites: MyString
+  already_visited: MyString
+  my_itinerary: MyString
+  remove_all: MyString
+  add: MyString
+  save: MyString
+  view_in_map: MyString
+  share: MyString
+  reorder: MyString
+  edit: MyString
+  delete: MyString
+  choose_itinerary_name: MyString
+  language: one
+
+two:
+  my_favorites: MyString
+  already_visited: MyString
+  my_itinerary: MyString
+  remove_all: MyString
+  add: MyString
+  save: MyString
+  view_in_map: MyString
+  share: MyString
+  reorder: MyString
+  edit: MyString
+  delete: MyString
+  choose_itinerary_name: MyString
+  language: two

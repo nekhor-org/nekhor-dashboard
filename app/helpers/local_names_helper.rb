@@ -1,0 +1,2 @@
+module LocalNamesHelper
+end
