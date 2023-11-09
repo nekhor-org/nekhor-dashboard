@@ -22,10 +22,9 @@ class LocalsController < ApplicationController
   # POST /locals or /locals.json
   def create
     @local = Local.new(local_params)
-
     respond_to do |format|
       if @local.save
-        format.html { redirect_to local_url(@local), notice: "Local was successfully created." }
+        format.html { redirect_to locals_path, notice: "Local was successfully created." }
         format.json { render :show, status: :created, location: @local }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +37,7 @@ class LocalsController < ApplicationController
   def update
     respond_to do |format|
       if @local.update(local_params)
-        format.html { redirect_to local_url(@local), notice: "Local was successfully updated." }
+        format.html { redirect_to locals_path, notice: "Local was successfully updated." }
         format.json { render :show, status: :ok, location: @local }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +64,6 @@ class LocalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def local_params
-      params.require(:local).permit(:name)
+      params.require(:local).permit!
     end
 end

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :audios
   resources :images
-  resources :post_contents
-  resources :posts
+  # resources :post_contents
+  resources :posts do
+    resources :post_contents, controller: 'post_contents'
+  end
   resources :labels
   resources :menus
   resources :local_names
@@ -14,5 +16,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "posts#index"
 end

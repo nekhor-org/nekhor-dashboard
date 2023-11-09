@@ -1,12 +1,8 @@
-<div id="<%= dom_id country %>">
-  <p>
-    <strong>Name:</strong>
-    <%= country.name %>
-  </p>
-
-  <p>
-    <strong>Local:</strong>
-    <%= country.local_id %>
-  </p>
-
-</div>
+<tr>
+  <td><%= country.name %></td>
+  <td><%= country.local&.name %></td>
+  <td>
+    <%= link_to "Edit", edit_country_path(country), class: "btn btn-success" %>
+    <%= link_to "Remove", country_path(country), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+  </td>
+</tr>

@@ -1,14 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Labels</h1>
-
-<div id="labels">
-  <% @labels.each do |label| %>
-    <%= render label %>
-    <p>
-      <%= link_to "Show this label", label %>
-    </p>
-  <% end %>
+<div class="row">
+  <div class="col">
+    <h1 class="mt-4">Labels</h1>
+  </div>
+  
 </div>
-
-<%= link_to "New label", new_label_path %>
+<div class="row">
+  <table class="table">
+    <thead>
+        <tr>
+            <th>My Favorites</th>
+            <th>Already Visited</th>
+            <th>My Itinerary</th>
+            <th>Remove All</th>
+            <th>Add</th>
+            <th>Save</th>
+            <th>View In Map</th>
+            <th>Share</th>
+            <th>reorder</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Choose Itinerary Name</th>
+            <th>Languages</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @labels.each do |label| %>
+        <%= render label %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

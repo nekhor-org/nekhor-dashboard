@@ -1,14 +1,25 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Countries</h1>
-
-<div id="countries">
-  <% @countries.each do |country| %>
-    <%= render country %>
-    <p>
-      <%= link_to "Show this country", country %>
-    </p>
-  <% end %>
+<div class="row">
+  <div class="col">
+    <h1 class="mt-4">Countries</h1>
+  </div>
+  <div class="col d-flex justify-content-end align-items-center">
+    <%= link_to "New Country", new_country_path, class: "btn btn-primary w-auto" %>
+  </div>
 </div>
-
-<%= link_to "New country", new_country_path %>
+<div class="row">
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @countries.each do |country| %>
+        <%= render country %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

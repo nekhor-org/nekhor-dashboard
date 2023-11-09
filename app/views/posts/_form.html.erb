@@ -1,16 +1,40 @@
-
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :lat %>
-    <%= f.input :lng %>
-    <%= f.association :country %>
-    <%= f.association :local %>
+    <h3>Main Image</h3>
+    <%= f.input :image, input_html: { class: "form-control" } %>
+    <hr />
+    <h3>Image Galleries</h3>
+    <%= simple_fields_for :audios do |audio| %>
+      <%= audio.input :file, as: :file, input_html: { class: "form-control" } %>
+    <% end %>
+    <hr />
+   
+    <%= simple_fields_for :audios do |audio| %>
+      <h3>Audio</h3>
+      <%= audio.input :file, as: :file, input_html: { class: "form-control" } %>
+    <% end %>
+
+    <hr />
+    <h3>General Data</h3>
+    <%= f.input :lat, input_html: { class: "form-control" } %>
+    <%= f.input :lng, input_html: { class: "form-control" } %>
+    <%= f.association :country, input_html: { class: "form-control" } %>
+    <%= f.association :local, input_html: { class: "form-control" } %>
+    <hr />
+
+    <% if @post.new_record? %>
+      <h3>Content Post</h3>
+
+      <%= f.input :title, input_html: { class: "form-control" } %>
+      <%= f.input :subtitle, input_html: { class: "form-control" } %>
+      <%= f.input :content, as: :rich_text_area, input_html: { class: "form-control" }  %>
+    <% end %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>

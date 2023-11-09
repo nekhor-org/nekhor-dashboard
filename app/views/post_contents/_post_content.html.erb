@@ -1,27 +1,8 @@
-<div id="<%= dom_id post_content %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post_content.title %>
-  </p>
-
-  <p>
-    <strong>Subtitle:</strong>
-    <%= post_content.subtitle %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= post_content.content %>
-  </p>
-
-  <p>
-    <strong>Post:</strong>
-    <%= post_content.post_id %>
-  </p>
-
-  <p>
-    <strong>Language:</strong>
-    <%= post_content.language_id %>
-  </p>
-
-</div>
+<tr>
+  <td><%= post_content&.post&.title %></td>
+  <td><%= post_content.title %></td>
+  <td><%= post_content.language&.name %></td>
+  <td>
+    <%= link_to "Edit", edit_post_post_content_path(@post, post_content, language_id: post_content.language_id), class: "btn btn-success" %>
+  </td>
+</tr>

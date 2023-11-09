@@ -1,7 +1,7 @@
-<div id="<%= dom_id local %>">
-  <p>
-    <strong>Name:</strong>
-    <%= local.name %>
-  </p>
-
-</div>
+<tr>
+  <td><%= local.name %></td>
+  <td>
+    <%= link_to "Edit", edit_local_path(local), class: "btn btn-success" %>
+    <%= link_to "Remove", local_path(local), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+  </td>
+</tr>

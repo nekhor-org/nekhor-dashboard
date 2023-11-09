@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<div id="posts">
+<div class="row">
+  <div class="col">
+    <h1 class="mt-4">Postagens</h1>
+  </div>
+  <div class="col d-flex justify-content-end align-items-center">
+    <%= link_to "New Posts", new_post_path, class: "btn btn-primary w-auto" %>
+  </div>
+</div>
+<div class="row">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+          <div class="card-body"><%= post.title %></div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+            <%= link_to "Edit Post", edit_post_path(post.id), class: "small text-white " %>
+            <%= link_to "Edit Post Content", post_post_contents_path(post.id), class: "small text-white " %>
+          </div>
+        </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>

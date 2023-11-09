@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+language1 = Language.create(name: "English")
+language2 = Language.create(name: "Spanish")
+
+
+Label.create( my_favorites: "My Favorites", already_visited: "Already Visited", my_itinerary: "My Itinerary", remove_all: "Remove All", add: "Add", save: "Save", view_in_map: "View In Map", share: "Share", reorder: "reorder", edit: "Edit", delete: "Delete", choose_itinerary_name: "Choose Itinerary Name", language_id: language1.id )
+
+
+
+
+
+
+
+
+

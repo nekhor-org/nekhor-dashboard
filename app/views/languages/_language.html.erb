@@ -1,7 +1,7 @@
-<div id="<%= dom_id language %>">
-  <p>
-    <strong>Name:</strong>
-    <%= language.name %>
-  </p>
-
-</div>
+<tr>
+  <td><%= language.name %></td>
+  <td>
+    <%= link_to "Edit", edit_language_path(language), class: "btn btn-success" %>
+    <%= link_to "Remove", language_path(language), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+  </td>
+</tr>

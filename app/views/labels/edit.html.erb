@@ -1,10 +1,7 @@
-<h1>Editing label</h1>
+<%- model_class = Label -%>
+<div class="flex-row d-flex justify-content-between align-items-center p-4">
+  <h3 class="fs-4">Edit Label</h3>
+  <%= link_to "Voltar", labels_path, class: "btn btn-primary w-auto" %>
+</div>
 
 <%= render "form", label: @label %>
-
-<br>
-
-<div>
-  <%= link_to "Show this label", @label %> |
-  <%= link_to "Back to labels", labels_path %>
-</div>

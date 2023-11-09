@@ -1,9 +1,10 @@
 class PostContentsController < ApplicationController
   before_action :set_post_content, only: %i[ show edit update destroy ]
+  before_action :set_post
 
   # GET /post_contents or /post_contents.json
   def index
-    @post_contents = PostContent.all
+    @post_contents = PostContent.where(post_id: @post.id)
   end
 
   # GET /post_contents/1 or /post_contents/1.json
@@ -17,6 +18,10 @@ class PostContentsController < ApplicationController
 
   # GET /post_contents/1/edit
   def edit
+
+    if params[:language_id].present?
+      @post_content = @post.post_contents.where(language_id: params[:language_id]).last
+    end
   end
 
   # POST /post_contents or /post_contents.json
@@ -38,7 +43,7 @@ class PostContentsController < ApplicationController
   def update
     respond_to do |format|
       if @post_content.update(post_content_params)
-        format.html { redirect_to post_content_url(@post_content), notice: "Post content was successfully updated." }
+        format.html { redirect_to post_post_contents_url(@post), notice: "Post content was successfully updated." }
         format.json { render :show, status: :ok, location: @post_content }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -61,6 +66,10 @@ class PostContentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post_content
       @post_content = PostContent.find(params[:id])
+    end
+
+    def set_post
+      @post = Post.find(params[:post_id])
     end
 
     # Only allow a list of trusted parameters through.

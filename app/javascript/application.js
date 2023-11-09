@@ -4,3 +4,6 @@ import "./controllers";
 import "./scripts";
 import "./datatables-simple-demo";
 import * as bootstrap from "bootstrap";
+
+import "trix";
+import "@rails/actiontext";

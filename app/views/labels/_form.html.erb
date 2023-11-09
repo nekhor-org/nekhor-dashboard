@@ -1,25 +1,24 @@
-
 <%= simple_form_for(@label) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :my_favorites %>
-    <%= f.input :already_visited %>
-    <%= f.input :my_itinerary %>
-    <%= f.input :remove_all %>
-    <%= f.input :add %>
-    <%= f.input :save %>
-    <%= f.input :view_in_map %>
-    <%= f.input :share %>
-    <%= f.input :reorder %>
-    <%= f.input :edit %>
-    <%= f.input :delete %>
-    <%= f.input :choose_itinerary_name %>
-    <%= f.association :language %>
+    <%= f.input :my_favorites, input_html: { class: "form-control" }  %>
+    <%= f.input :already_visited, input_html: { class: "form-control" }  %>
+    <%= f.input :my_itinerary, input_html: { class: "form-control" }  %>
+    <%= f.input :remove_all, input_html: { class: "form-control" }  %>
+    <%= f.input :add, input_html: { class: "form-control" }  %>
+    <%= f.input :save, input_html: { class: "form-control" }  %>
+    <%= f.input :view_in_map, input_html: { class: "form-control" }  %>
+    <%= f.input :share, input_html: { class: "form-control" }  %>
+    <%= f.input :reorder, input_html: { class: "form-control" }  %>
+    <%= f.input :edit, input_html: { class: "form-control" }  %>
+    <%= f.input :delete, input_html: { class: "form-control" }  %>
+    <%= f.input :choose_itinerary_name, input_html: { class: "form-control" }  %>
+    <%= f.association :language, input_html: { class: "form-control" }  %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+    
+  <div class="form-actions mt-4">
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>

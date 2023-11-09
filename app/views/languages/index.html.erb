@@ -1,14 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Languages</h1>
-
-<div id="languages">
-  <% @languages.each do |language| %>
-    <%= render language %>
-    <p>
-      <%= link_to "Show this language", language %>
-    </p>
-  <% end %>
+<div class="row">
+  <div class="col">
+    <h1 class="mt-4">Languages</h1>
+  </div>
+  <div class="col d-flex justify-content-end align-items-center">
+    <%= link_to "New Language", new_language_path, class: "btn btn-primary w-auto" %>
+  </div>
 </div>
-
-<%= link_to "New language", new_language_path %>
+<div class="row">
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @languages.each do |language| %>
+        <%= render language %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

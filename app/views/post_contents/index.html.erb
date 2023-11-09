@@ -1,14 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Post contents</h1>
-
-<div id="post_contents">
-  <% @post_contents.each do |post_content| %>
-    <%= render post_content %>
-    <p>
-      <%= link_to "Show this post content", post_content %>
-    </p>
-  <% end %>
+<div class="row">
+  <div class="col">
+    <h1 class="mt-4">Post Content</h1>
+    <div class="col d-flex justify-content-end align-items-center">
+      <%= link_to "Voltar", posts_path, class: "btn btn-primary w-auto" %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New post content", new_post_content_path %>
+<div class="row">
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Original title</th>
+            <th>Title</th>
+            <th>Language</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @post_contents.each do |post_content| %>
+        <%= render post_content %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
