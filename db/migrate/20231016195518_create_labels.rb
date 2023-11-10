@@ -6,12 +6,12 @@ class CreateLabels < ActiveRecord::Migration[7.0]
       t.string :my_itinerary
       t.string :remove_all
       t.string :add
-      t.string :save
+      t.string :save_button
       t.string :view_in_map
       t.string :share
       t.string :reorder
       t.string :edit
-      t.string :delete
+      t.string :delete_button
       t.string :choose_itinerary_name
       t.references :language, null: false, foreign_key: true
 

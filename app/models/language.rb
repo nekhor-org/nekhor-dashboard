@@ -9,6 +9,8 @@ class Language < ApplicationRecord
 
   after_create :create_locals
   after_create :create_countries
+  after_create :create_post
+  after_create :create_labels
 
 
   def create_locals
@@ -30,7 +32,7 @@ class Language < ApplicationRecord
   end
 
   def create_labels
-    Label.create( my_favorites: "My Favorites", already_visited: "Already Visited", my_itinerary: "My Itinerary", remove_all: "Remove All", add: "Add", save: "Save", view_in_map: "View In Map", share: "Share", reorder: "reorder", edit: "Edit", delete: "Delete", choose_itinerary_name: "Choose Itinerary Name", language_id: self.id)
+    Label.create( my_favorites: "My Favorites", already_visited: "Already Visited", my_itinerary: "My Itinerary", remove_all: "Remove All", add: "Add", save_button: "Save", view_in_map: "View In Map", share: "Share", reorder: "reorder", edit: "Edit", delete_button: "Delete", choose_itinerary_name: "Choose Itinerary Name", language_id: self.id)
   end
 
   # def create_menus_and_labels

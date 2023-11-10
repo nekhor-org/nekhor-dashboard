@@ -6,11 +6,11 @@ class Label < ApplicationRecord
             :my_itinerary,
             :remove_all,
             :add,
-            :save,
+            :save_button,
             :view_in_map,
             :share,
             :reorder,
             :edit,
-            :delete,
+            :delete_button,
             :choose_itinerary_name, presence: true
 end

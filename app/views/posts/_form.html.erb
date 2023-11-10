@@ -1,4 +1,4 @@
-<%= simple_form_for(@post) do |f| %>
+<%= simple_form_for @post do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -6,13 +6,19 @@
     <h3>Main Image</h3>
     <%= f.input :image, input_html: { class: "form-control" } %>
     <hr />
-    <h3>Image Galleries</h3>
-    <%= simple_fields_for :audios do |audio| %>
-      <%= audio.input :file, as: :file, input_html: { class: "form-control" } %>
-    <% end %>
+
+    <div id='images'>
+      <h3>Gallery Images</h3>
+      <%= f.simple_fields_for :images do |image| %>
+        <%= render 'image_fields', :f => image %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add image', f, :images, class: "btn btn-primary mt-4" %>
+      </div>
+    </div>
     <hr />
    
-    <%= simple_fields_for :audios do |audio| %>
+    <%= f.simple_fields_for :audios do |audio| %>
       <h3>Audio</h3>
       <%= audio.input :file, as: :file, input_html: { class: "form-control" } %>
     <% end %>
@@ -21,8 +27,8 @@
     <h3>General Data</h3>
     <%= f.input :lat, input_html: { class: "form-control" } %>
     <%= f.input :lng, input_html: { class: "form-control" } %>
-    <%= f.association :country, input_html: { class: "form-control" } %>
-    <%= f.association :local, input_html: { class: "form-control" } %>
+    <%= f.association :country, label_method: :name_country, input_html: { class: "form-control" } %>
+    <%#= f.association :local, input_html: { class: "form-control" } %>
     <hr />
 
     <% if @post.new_record? %>
@@ -34,7 +40,7 @@
     <% end %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions mt-4">
     <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -13,22 +13,27 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @post.post_contents.where(language_id: @language.id)
+    @post.images.build
+    @post.audios.build
   end
 
   # GET /posts/1/edit
   def edit
+    @post.images.build unless @post.images.present?
+    @post.audios.build unless @post.audios.present?
   end
 
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.local_id = @post.country&.local&.id
     respond_to do |format|
-      if @post.save
+      if @post.save!
         format.html { redirect_to posts_path, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
+        @post.images.build unless @post.images.present?
+        @post.audios.build unless @post.audios.present?
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -42,6 +47,8 @@ class PostsController < ApplicationController
         format.html { redirect_to posts_path, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
+        @post.images.build unless @post.images.present?
+        @post.audios.build unless @post.audios.present?
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end

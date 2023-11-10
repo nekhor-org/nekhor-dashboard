@@ -1,0 +1,10 @@
+<div class="nested-fields row align-items-center">
+  <div class="col-8">
+    <%= f.input :file, as: :file, input_html: { class: "form-control" } %>
+  </div>
+  <div class="text-center align-middle col-4 mt-4">
+    <%= link_to_remove_association f, class: 'btn btn-danger tippy', :'data-tippy-content' => 'Remove Image' do %>
+      Remove
+    <% end %>
+  </div>
+</div>

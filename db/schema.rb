@@ -109,12 +109,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_194051) do
     t.string "my_itinerary"
     t.string "remove_all"
     t.string "add"
-    t.string "save"
+    t.string "save_button"
     t.string "view_in_map"
     t.string "share"
     t.string "reorder"
     t.string "edit"
-    t.string "delete"
+    t.string "delete_button"
     t.string "choose_itinerary_name"
     t.bigint "language_id", null: false
     t.datetime "created_at", null: false
