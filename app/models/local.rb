@@ -1,6 +1,7 @@
 class Local < ApplicationRecord
   has_many :local_names, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :countries, dependent: :destroy
   validates :name, presence: true
 
   accepts_nested_attributes_for :local_names,
