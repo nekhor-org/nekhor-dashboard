@@ -1,0 +1,258 @@
+pt-BR:
+  enums:
+    default_status: &default_status
+      status:
+        enabled: Publicado
+        disabled: Não Publicado
+
+    default_alt_status: &default_alt_status
+      status:
+        enabled: Ativo
+        disabled: Inativo
+
+    user:
+      <<: *default_status
+
+    client:
+      <<: *default_status
+
+    landing_page:
+      <<: *default_alt_status
+
+    subscription:
+      status:
+        active: Ativa
+        disabled: Suspensa
+        suspended: Suspensa
+        scheduled: Agendada
+        cancelled: Cancelada
+        late_payment: Pagamento atrasado
+        unpaid: Em débito
+      kind:
+        weekly: Semanal
+        monthly: Mensal
+
+    product:
+      <<: *default_alt_status
+
+    store_contact:
+      <<: *default_alt_status
+      kind:
+        pf: "Pessoa Fisica"
+        pj: "Pessoa Juridica"
+
+    domain:
+      status:
+        active: Ativo
+        pending: Pendente
+        processing: Processando
+        inactive: Inativo
+        failed: Falhou
+        excluded: Excluído
+
+    section:
+      kind:
+        background: "Fundo da Página"
+        header: "Cabeçalho/Topo"
+        timer: "Cronômetro"
+        text_side: "Texto Lateral"
+        image: "Imagem"
+        text_image: "Imagem com Texto"
+        info_text: "Texto Informativo"
+        info_text_item: "Item do Texto Informativo"
+        product: "Produtos"
+        product_item: "Produto"
+        testimonial: "Depoimentos"
+        testimonial_item: "Depoimento"
+        faq: "Perguntas Frequentes"
+        faq_item: "Item Perguntas Frequentes"
+        gallery: "Galeria"
+        gallery_item: "Imagem Galeria"
+        footer: "Rodapé"
+        timeline: "Linha do Tempo"
+        timeline_item: "Item da Linha do Tempo"
+        video: "Video"
+        checkout: "Checkout"
+        whatsapp: "Botão Whatsapp"
+
+    option:
+      kind:
+        primary_background_color: Cor de fundo
+        secondary_background_color: Cor de fundo secundária
+        title: Título
+        subtitle: Subtítulo
+        description: Descrição
+        text: Texto
+        link: Link do Botão
+        label: Etiqueta
+        label_video: Etiqueta do Video
+        label_button: Etiqueta do Botão
+        text_button: Texto do Botão
+        text_color: Cor do Texto
+        text_button_color: Cor do Texto Botão
+        label_color: Cor da Etiqueta
+        label_video_color: Cor da Etiqueta Video
+        label_button_color: Cor da Etiqueta Botão
+        button_color: Cor do Botão
+        timer: Tempo Total(em segundos)
+        video: Link do Video(Youtube)
+        image: Imagem
+        logo: Logo
+        background_image: Imagem de fundo
+        whatsapp_phone: Número Whatsapp
+
+    store_profile:
+      <<: *default_alt_status
+      previously_platform:
+        shopify: Shopify
+        cart_panda: Cartpanda
+        yampi: Yampi
+        woocommerce: WooCommerce
+        guru: Guru
+        nuvem_shop: Nuvemshop
+        wordpress: WordPress
+        other: Outros
+      current_operation:
+        ecommerce: E-commerce
+        dropshiping: Dropshiping
+        marketing: Marketing de Afiliados
+        infoproducts: Infoprodutos
+        encapsulated: Encapsulados
+      time_operation:
+        im_starting: Ainda estou começando
+        less_one_year: Menos de 1 ano
+        between_one_and_two_years: Entre 1 e 2 anos
+        between_two_and_four_years: Entre 2 e 4 anos
+        more_four_years: Mais de 4 anos
+      monthly_income:
+        other: Prefiro não informar
+        up_to_ten_thousand: Até 10 mil reais
+        between_ten_and_one_hundred_thousand: Entre 10 mil e 100 mil reais
+        between_one_hundred_and_five_hundred_thousand: Entre 100 mil e 500 mil reais
+        more_five_hundred_thousand: Mais de 500 mil reais
+      kind:
+        complete: Plataforma completa
+        integrations: Checkout transparente
+
+    profile:
+      <<: *default_alt_status
+      gender:
+        male: Masculino
+        female: Feminino
+        other: Outro
+        not_answer: Prefiro não informar
+      document_state_type:
+        rg: RG
+        cnh: CNH
+        rne: RNE
+      marital_state:
+        single: Solteiro(a)
+        married: Casado(a)
+        widower: Viúvo(a)
+        divorced: Divorciado(a)
+
+    coupon:
+      status:
+        enabled: Ativo
+        disabled: Inativo
+      discount_kind:
+        percentage: Percentual
+        fixed: Fixo
+
+    pixel:
+      <<: *default_alt_status
+      connection_method:
+        api: API de Conversões
+        traditional: Clássica
+      service:
+        facebook: Facebook
+        google: Google
+        taboola: Taboola
+        tiktok: TikTok
+        kwai: Kwai
+
+    order:
+      <<: *default_status
+      tracking_type:
+        cor: Correios
+        seq: Sequoia
+        jad: Jadlog
+      financial_status:
+        waiting_payment: Aguardando pagamento
+        paid: Pago
+        in_process: Em processo
+        authorized: Autorizado
+        captured: Capturado
+        canceled: Cancelado
+        refunded: Estornado
+        declined: Recusado
+        chargedback: Charged back
+        in_mediation: Em mediação
+      status:
+        open: Aberto
+        close: Fechado
+        canceled: Cancelado
+        not_informed: Não informado
+      stage:
+        waiting_for_payment: Aguardando pagamento
+        payment_approved: Pagamento aprovado
+        products_selection: Produtos em separação
+        billed: Faturado
+        ready_to_ship: Pronto para envio
+        on_carriage: Em transporte
+        delivered: Entregue
+        canceled: Cancelado
+        declined: Pagamento não aprovado
+        not_informed: Não informado
+      payment_method:
+        credit_card: Cartão de Credito
+        bank_slip: Boleto
+        not_informed: Não informado
+
+    upsell:
+      kind:
+        checkout: Checkout
+        on_finish: Ao Finalizar
+        email_sms: E-mail SMS
+
+    order_bump:
+      kind:
+        ever: Sempre mostrar
+        value: Valor em compras
+        product: Produtos específicos
+
+    shopify_config:
+      <<: *default_status
+      type_of_integration:
+        private_app: App personalizado
+
+    checkout_config:
+      <<: *default_status
+      checkout_type:
+        one_step: Um Step
+        mult_step: Muitos Step
+
+    seller:
+      <<: *default_alt_status
+
+    plan:
+      <<: *default_alt_status
+
+    invoice:
+      status:
+        pending: Em aberto
+        paid: Pago
+        cancelled: Cancelado
+        scheduled: Agendada
+      kind:
+        plan: Plano
+        transaction: Transações
+
+    grid:
+      <<: *default_alt_status
+
+    document:
+      status:
+        waiting: Aguardando conferência
+        verified: Aprovado
+        rejected: Rejeitado

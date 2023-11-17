@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy toggle]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :asc)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -21,6 +21,12 @@ class PostsController < ApplicationController
   def edit
     @post.images.build unless @post.images.present?
     @post.audios.build unless @post.audios.present?
+  end
+
+  def toggle
+    @post.update has_home: !@post.has_home
+
+    redirect_to posts_path
   end
 
   # POST /posts or /posts.json

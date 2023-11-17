@@ -196,3 +196,5 @@ gem 'figaro'
 
 gem 'rqrcode', '~> 2.2'
 gem 'retries'
+
+gem 'rack-cors', '1.0.3'

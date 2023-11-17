@@ -1,0 +1,24 @@
+pt-BR:
+  helpers:
+    actions: "Ações"
+    confirm: "Confirma esta operação?"
+    links:
+      back: "Voltar"
+      close: "Fechar"
+      cancel: "Cancelar"
+      confirm: "Você tem certeza?"
+      destroy: "Excluir"
+      new: "Cadastrar"
+      edit: "Editar"
+      show: "Exibir"
+      answer: "Responder"
+      active: "Ativar"
+      tutorial: "Como usar o Voxuy"
+      rollback: "Desfazer mudanças"
+      check: "Verificar"
+    titles:
+      edit: "Editar %{model}"
+      save: "Salvar %{model}"
+      new: "Cadastrar %{model}"
+      delete: "Excluir %{model}"
+      show: "Exibir %{model}"

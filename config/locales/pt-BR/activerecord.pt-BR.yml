@@ -1,0 +1,687 @@
+pt-BR:
+  activerecord:
+    models:
+      address: Endereco
+      # afiliate_product: afiliate_product
+      afiliation: Afiliação
+      brand: Marca
+      card: Cartão
+      cart: Carrinho
+      # cart_item: cart_item
+      category: Categoria
+      country: Sub-Category
+      charge: charge
+      # charge_invoice: charge_invoice
+      checkout_config: Configuração Checkout
+      # checkout_config_product: checkout_config_product
+      city: Cidade
+      client: Parceiro
+      setting: Configurações
+      # company_branch: company_branch
+      domain: Domínio
+      coupon: Cupom
+      freight: Frete
+      customer: Consumidor
+      order_bump: OrderBump
+      # customer_store: customer_store
+      employee: Usuário
+      # employee_store: employee_store
+      enterprise: Empresa
+      gateway: Gateway
+      gateway_config: Configuração Gateway
+      # gateway_field: gateway_field
+      # gateway_store: gateway_store
+      grid: Grade
+      # grid_product: grid_product
+      # grid_variation: grid_variation
+      image: Imagem
+      invoice: Fatura
+      landing_page: Landing Page
+      # nature_company: nature_company
+      order: Pedido
+      # order_item: order_item
+      # pag_seguro_config: pag_seguro_config
+      phone: Contato
+      pixel: Pixel
+      plan: Plano
+      product: Produto
+      productor: Produtor
+      # productors_product: productors_product
+      profile: Perfil
+      property: Variação
+      property_variation: Variação
+      option: Opção
+      role: Permissão
+      seller: Lojista
+      section: Seção
+      state: Estado
+      store: Loja
+      social_proof: Prova Social
+      # store_profile: store_profile
+      subscription: Inscrição
+      theme: Tema
+      user: Usuário
+      variation: Variação
+      virtual_cart: Carrinho Virtual
+      delivery_option: Aplicativos
+      integration_delivery: Integração Delivery
+      reportana_config: Configurações Reportana
+      voxuy_config: Configurações Voxuy
+      webhook_store: Webhook
+      store_setting: Politicas de devolução e entrega
+      email_product: Envio de produto via email
+
+    attributes:
+      default_attributes: &default_attributes
+        content: Conteúdo
+        description: Descrição
+        email: E-mail
+        name: Nome
+        note: Observações
+        status: Status
+        text: Conteúdo
+        title: Título
+        user: Usuário
+        kind: Tipo
+        created_at: Cadastrado em
+        updated_at: Atualizado em
+
+      integration_delivery:
+        <<: *default_attributes
+        zip_code: CEP de origem
+        additional_term: Prazo adicional
+        add_value: Valor da taxa de acréscimo
+        shipping_fee: Acrescentar taxa ao frete
+        token: Token
+        integration: Integração
+        delivery_option_id: Gateway de Envio
+
+      freight:
+        <<: *default_attributes
+        name: Nome
+        description: Descrição
+        amount: Valor
+        active: Status
+
+      store_contact:
+        <<: *default_attributes
+        name: Nome Completo
+        kind: Tipo de contato
+        phone: Número do suporte
+        support_email: Email do suporte
+        document: CPF/CNPJ
+
+      address:
+        <<: *default_attributes
+        street: Logradouro
+        number: Número
+        zip_code: CEP
+        neighborhood: Bairro
+        complement: Complemento
+        state_id: Estado
+        state: Estado
+        city_id: Cidade
+        city: Cidade
+
+      addresses:
+        <<: *default_attributes
+        street: Logradouro
+        number: Número
+        zip_code: CEP
+        neighborhood: Bairro
+        complement: Complemento
+        state: Estado
+        state_id: Estado
+        city_id: Cidade
+        city: Cidade
+        delivery_kind: Frete
+
+      user:
+        <<: *default_attributes
+        block: Bloqueio
+        current_password: Senha atual
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirme a senha
+        profile: Perfil
+        remember_me: Lembrar senha
+        remove_avatar: Remover Imagem de Perfil
+        roles: Permissões
+        phones: Telefones
+        kind: Tipo
+
+      profile:
+        <<: *default_attributes
+        short_name: Nome de exibição
+        birthday: Data de nascimento
+        company_name: Razão social
+        date_of_issue: Data de expedição/emissão
+        document: CPF/CNPJ
+        document_state: Número do documento
+        document_state_type: Tipo de documento
+        entity: Tipo de Cadastro
+        exempt_state: Registro estadual isento?
+        fantasy_name: Nome fantasia
+        gender: Gênero
+        marital_state: Estado civil
+        monthly_billing: Faturamento mensal
+        name: Nome completo
+        nationality: Nacionalidade
+        opening_date: Data de abertura
+        publicly_exposed: Publicamente exposta desde
+        company_branch_id: Ramo da empresa
+        company_branch: Ramo da empresa
+        emission_state_id: Estado de emissão
+        emission_state: Estado de emissão
+        enterprise_id: Tipo da empresa
+        enterprise: Tipo da empresa
+        nature_company_id: Natureza da empresa
+        nature_company: Natureza da empresa
+        avatar: Imagem de Perfil
+
+      store_setting:
+        <<: *default_attributes
+        has_return_policy: "Possui Politica de Devolução?"
+        return_policy: "Politica de Devolução"
+        has_delivery_policy: "Possui Politica de Entrega?"
+        delivery_policy: "Politica de Entrega"
+
+      client:
+        <<: *default_attributes
+        name: Razão Social
+        payform_token: PayForm Token
+        payform_marketplace_id: PayForm Marketplace id
+        payform_marketplace: PayForm Marketplace id
+        primary_color: Cor para e-mails transacionais
+        fantasy_name: Nome fantasia
+        cnpj: CNPJ
+        phone: Número do suporte
+        email: E-mail
+        email_mailer: E-mail para notificações
+        user_id: Usuário
+        has_onboard: Onboard Resumido?
+        user: Usuário
+        address: Endereço
+        addresses: Endereço
+        domain: Domínio
+        short_description_app: "Descrição curta para aplicativo"
+        description_app: "Descrição para aplicativo"
+        terms_of_use: "Termos de uso"
+        privacy_policy: "Política de privacidade"
+        enterprise: Pessoa Jurídica
+        individual: Pessoa Física
+        has_complete_store: Loja Completa
+        has_shopify_store: Integração com Shopify
+
+      customer:
+        <<: *default_attributes
+        name: Nome
+        email: Email
+        document: Documento
+        store_ids: Lojas
+
+      domain:
+        <<: *default_attributes
+        name: Nome
+        default: Principal?
+        client: Cliente
+        client_id: Cliente
+        store: Lojas
+        store_id: Lojas
+
+      phone:
+        <<: *default_attributes
+        ddd: DDD
+        number: Número
+        whatsapp: Whatsapp?
+
+      phones:
+        <<: *default_attributes
+        ddd: DDD
+        number: Número
+        whatsapp: Whatsapp?
+
+      product:
+        <<: *default_attributes
+        amount: Quantidade
+        deleted_at: Deletado em
+        multiple: Variação
+        ncm: NCM
+        sku: SKU
+        used: Usado?
+        video_url: URL de vídeo
+        virtual: Tipo do Produto
+        brand_id: Marca
+        brand: Marca
+        category_id: Categoria
+        category: Categoria
+        store_id: Loja
+        store: Loja
+        variations: Variações
+        images: Imagens
+        grids: Grade
+
+      variation:
+        <<: *default_attributes
+        active: Ativo?
+        amount: Quantidade
+        barcode: Código de Barras
+        code: Código
+        cost_price: Preço de custo
+        gtin: EAN/GTIN
+        heigth: Altura
+        length: Comprimento
+        mpn: MPN
+        ncm: NCM
+        price: Preço
+        sku: SKU
+        weight: Peso(kg)
+        width: Largura
+        promotional_price: Preço Promocional
+        product_id: Produto
+        product: Produto
+        properties: Propriedades
+        images: Imagens
+        property_variation: Variação
+
+      brand:
+        <<: *default_attributes
+        active: Status
+        description: Descrição
+
+      category:
+        <<: *default_attributes
+        active: Status
+        description: Descrição
+
+      theme:
+        <<: *default_attributes
+
+      landing_page:
+        <<: *default_attributes
+        domain: Domínio
+        domains: Domínio
+        domain_ids: Domínio
+        subdomain: Subdomínio
+        store_id: Loja
+        store: Loja
+        active: Ativo?
+        theme_id: Tema
+        theme: Tema
+        page_trackings: Impressões da Página
+        click_trackings: Cliques nos botões
+        checkout_url_default: URL padrão do checkout
+
+      section:
+        <<: *default_attributes
+        position: Ordenação
+        component: Componente
+        is_collection: Coleção?
+        active: Ativo?
+
+      option:
+        <<: *default_attributes
+        content: "Conteúdo"
+        section: "Seção"
+        section_id: "Seção"
+
+      grid:
+        <<: *default_attributes
+        properties: Variações
+
+      property:
+        <<: *default_attributes
+        grid: Grade
+        grid_id: Grade
+        property_variation: Variação
+        property_id: Variação
+
+      property_variation:
+        <<: *default_attributes
+        property_id: Variação
+
+      store:
+        <<: *default_attributes
+        code: Código
+        seller_id: Vendedor
+        seller: Vendedor
+        file: Logo
+        pag_seguro_config: Token PagSeguro
+        addresses:
+          street: Logradouro
+          number: Número
+          zip_code: CEP
+          neighborhood: Bairro
+          complement: Complemento
+          state: Estado
+          state_id: Estado
+          city_id: Cidade
+          city: Cidade
+
+      testimonial:
+        <<: *default_attributes
+        comment: "Depoimento"
+        picture: "Imagem"
+
+      store_profile:
+        <<: *default_attributes
+        description: Descrição
+        company_name: Razão social
+        current_operation: Operação atual
+        im_starting: Estou Começando
+        monthly_income: Renda mensal
+        time_operation: Tempo de operação
+        kind: Tipo de integração
+
+        email: E-mail
+        # whatsapp:
+        # facebook:
+        # instagram:
+        # site:
+
+      seller:
+        <<: *default_attributes
+
+      order:
+        <<: *default_attributes
+        processed_at: Processado em
+
+      pagar_me_config:
+        <<: *default_attributes
+        store_id: Loja
+        store: Loja
+        client_id: Cliente
+        client: Cliente
+        account_id: Conta
+        account: Conta
+        name: Nome
+        name_invoice: Nome que aparece na fatura do cartão
+        has_rate: Quer Cobrar Juros?
+        webhook: Configurou o webhook?
+        rate: Quanto de juros ao mês? (Limite de até 1%)
+        capture: Capturar transações automaticamente?
+        active: Ativo?
+        environment: Ambiente
+        email: E-mail
+        access_token: Token de acesso
+        secret_key: Chave Secreta
+        token: Token
+        app_id: App id
+        app_key: App key
+      zoop_config:
+        <<: *default_attributes
+        store_id: Loja
+        store: Loja
+        has_rate: Quer Cobrar Juros?
+        webhook: Configurou o webhook?
+        installments: Número de parcelas sem juros
+        rate: Quanto de juros ao mês? (Limite de até 1%)
+        active: Ativo?
+        seller_id: Seller id
+        seller: Seller id
+      abmex_config:
+        <<: *default_attributes
+        store_id: Loja
+        store: Loja
+        client_id: Cliente
+        client: Cliente
+        account_id: Conta
+        account: Conta
+        name: Nome
+        name_invoice: Nome que aparece na fatura do cartão
+        has_rate: Quer Cobrar Juros?
+        installments: Número de parcelas sem juros
+        webhook: Configurou o webhook?
+        rate: Quanto de juros ao mês? (Limite de até 1%)
+        capture: Capturar transações automaticamente?
+        active: Ativo?
+        environment: Ambiente
+        email: Email
+        access_token: Token de acesso
+        secret_key: Chave Secreta
+        token: Token
+        app_id: App id
+        app_key: App key
+      akta_config:
+        <<: *default_attributes
+        store_id: Loja
+        store: Loja
+        client_id: Cliente
+        client: Cliente
+        account_id: Conta
+        account: Conta
+        name: Nome
+        name_invoice: Nome que aparece na fatura do cartão
+        has_rate: Quer Cobrar Juros?
+        installments: Número de parcelas sem juros
+        webhook: Configurou o webhook?
+        rate: Quanto de juros ao mês? (Limite de até 1%)
+        capture: Capturar transações automaticamente?
+        active: Ativo?
+        environment: Ambiente
+        email: Email
+        access_token: Token de acesso
+        secret_key: Chave Secreta
+        token: Token
+        app_id: App id
+        app_key: App key
+
+      pag_seguro_config:
+        <<: *default_attributes
+        store_id: Loja
+        store: Loja
+        client_id: Cliente
+        client: Cliente
+        account_id: Conta
+        account: Conta
+        name: Nome
+        name_invoice: Nome que aparece na fatura do cartão
+        capture: Capturar transações automaticamente?
+        active: Ativo?
+        environment: Ambiente
+        email: Email
+        access_token: Token de acesso
+        public_key: Chave pública
+        token: Token
+        app_id: App id
+        app_key: App key
+
+      mercado_pago_config:
+        <<: *default_attributes
+        store_id: Loja
+        store: Loja
+        client_id: Cliente
+        client: Cliente
+        account_id: Conta
+        account: Conta
+        name: Nome
+        name_invoice: Nome que aparece na fatura do cartão
+        capture: Capturar transações automaticamente?
+        active: Ativo?
+        environment: Ambiente
+        email: Email
+        access_token: Token de acesso
+        public_key: Chave pública
+
+      coupon:
+        <<: *default_attributes
+        store_id: Loja
+        store: Loja
+        code: Código
+        discount_kind: Tipo de Desconto
+        discount_value: Valor do Desconto
+        finished_at: Data Final
+        minimum_value: Valor Mínimo
+        quantity: Quantidade
+        show_minimum: Exigir quantidade mínima de ítens?
+        started_at: Data Inicial
+        status: Ativo?
+
+      pixel:
+        <<: *default_attributes
+        product_ids: Produtos
+        products: Produtos
+        tag_manager_id: ID tag manager
+        name: Nome do pixel
+        service: Serviço
+        access_token: Token de Acesso
+        check_billet: Marcar boleto
+        check_pix: Marcar pix
+        code: ID do pixel
+        has_pix_pending: Pending(pix)
+        has_pix_purchase: Purchase(pix)
+        connection_method: Tipo de integração
+        conversion_label: Rótulo de Conversão
+        domain: Domínio
+        event_billet_customize: Evento customizado para boleto
+        event_name: Nome do evento customizado
+        event_type: Tipo do evento customizado
+        meta_tag_code: Código Meta-tag
+
+      upsell:
+        <<: *default_attributes
+        name: Nome
+        kind: Tipo
+        product_view_id: Produto de Visualização
+        product_offer_id: Produto de Oferta
+
+      social_proof:
+        <<: *default_attributes
+        title: Título
+        active: Ativo?
+        product_ids: Produtos
+        product_view: Produto de Visualização
+        product_offer: Produto de Oferta
+
+      setting:
+        <<: *default_attributes
+
+      plan:
+        <<: *default_attributes
+        owner: Proprietário
+        value: Valor
+        tax: Taxa
+        tax_description: Descrição da taxa
+        tax_label: Observação da taxa
+
+      order_bump:
+        <<: *default_attributes
+        price: Preço de venda
+        promotional_price: Preço promocional
+        kind: Regra
+        store: Loja
+        variations: Variantes
+        product: Produtos
+        product_id: Produtos
+        variation: Variações
+        variation_id: Variações
+        product_ids: Produtos
+        products: Produtos
+        value: Valor
+
+      shopify_config:
+        <<: *default_attributes
+        api_key: Chave da api
+        api_password: Token de Acesso
+        api_secret: Chave secreta da API
+        store_url: URL da loja
+        type_of_integration: Tipo de integração
+        automatic_synchronization: Sincronização automática
+        customers_was_imported: Clientes foram importados
+        orders_was_imported: Pedidos foram importados
+        products_was_imported: Produtos foram importados
+        webhooks_was_created: Webhooks foram criados
+        active: Ativo
+
+      classpay_checkout:
+        <<: *default_attributes
+        active: Ativo
+        active_date: Data de ativação
+        button_label_checkout: Botão
+        inactive_date: Data de inativação
+        template_name: Nome do template
+
+      checkout_config:
+        <<: *default_attributes
+        active: Ativo
+        accumulative_bank_slip_discount: Desconto boleto acumulativo
+        accumulative_card_discount: Desconto cartão acumulativo
+        accumulative_pix_discount: Desconto pix acumulativo
+        accumulative_bank_slip_discount_allow: Permitir desconto acumulativo?
+        accumulative_card_discount_allow: Permitir desconto acumulativo?
+        accumulative_pix_discount_allow: Permitir desconto acumulativo?
+        bank_slip_expiration_days: Dias do boleto
+        pix_expiration_hours: Quantidade de dias para compensação do pagamento
+        checkout_type: Tipo de checkout
+        has_coupon: Permitir utilização de cupom de desconto no checkout?
+        default_installment: Parcela padrão
+        default_store_config: Configuração padrão da loja
+        discount_bank_slip: Desconto boleto (%)
+        discount_card: Desconto cartão (%)
+        discount_pix: Desconto pix (%)
+        featured_text: Habilitar texto em destaque
+        featured_text_content: Texto em destaque
+        installment_limit: Limite de parcelas
+        interest_free_installment: Parcelamento sem juros
+        payment_via_bank_slip: Pagamento via boleto
+        payment_via_card: Pagamento via cartão
+        payment_via_pix: Pagamento via pix
+        timer: Habilitar cronômetro
+        timer_duration_minutes: Duração cronômetro
+        timer_duration_seconds: Duração cronômetro
+        card_redirect_url: URL de redirecionamento
+        bank_slip_redirect_url: URL de redirecionamento
+        pix_redirect_url: URL de redirecionamento
+        customized_message_payment_via_bank_slip: Mensagem de sucesso via boleto
+        customized_message_payment_via_card: Mensagem de sucesso via cartão
+        customized_message_payment_via_pix: Mensagem de sucesso via pix
+        bank_slip_redirect_time: Tempo para direcionar
+        card_redirect_time: Tempo para direcionar
+        pix_redirect_time: Tempo para direcionar
+        timer_text_color: Cor do cronômetro
+        timer_bg_color: Cor de fundo
+        message_text_color: Cor de texto
+        redirect_timer_active: Ativar
+        bank_slip_redirect: Ativar
+        card_redirect: Ativar
+        pix_redirect: Ativar
+
+      reportana_config:
+        <<: *default_attributes
+        active: Ativo?
+        secret_key: Chave Secreta
+        client_id: Id de Cliente
+        store_id: Loja
+
+      webhook_store:
+        <<: *default_attributes
+        active: Ativo?
+
+      voxuy_config:
+        <<: *default_attributes
+        active: Ativo?
+        url_webhook: URL do Webhook
+        api_token: Token da API
+        plan_id: ID do Plano
+        store_id: Loja
+
+      card_form:
+        <<: *default_attributes
+        credit_card_number: "Número do cartão"
+        credit_card_titular_name: "Nome do titular"
+        credit_card_validate: "Data de validade"
+        credit_card_security_code: "Código de segurança"
+        credit_card_titular_document: "Documento"
+        credit_card_same_buyer: "Mesmo comprador"
+        payment_installments: "Parcelas"
+
+      email_product:
+        <<: *default_attributes
+        subject: Título
+        message: Mensagem do e-mail
+
+      document:
+        <<: *default_attributes
+        file: Arquivo
+        status: Situação
+        downloaded_at: Baixado em

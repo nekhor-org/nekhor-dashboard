@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   # resources :post_contents
   resources :posts do
     resources :post_contents, controller: 'post_contents'
+
+    member do
+      get :toggle
+    end
   end
   resources :labels
   resources :menus
