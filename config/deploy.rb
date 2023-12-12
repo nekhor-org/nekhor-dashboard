@@ -39,6 +39,7 @@ set :rbenv_path, "/home/deploy/.rbenv"
 
 task :remote_environment do
   invoke :'rbenv:load'
+  invoke :'nvm:load'
 end
 
 # task :'rbenv:load' do
@@ -119,6 +120,15 @@ task :sidekiq_restart do
   command %(sudo service sidekiq restart)
 end
 
+namespace :nvm do
+  task :load do
+    command 'echo "-----> Loading nvm"'
+    command %{
+      source ~/.nvm/nvm.sh
+    }
+    command 'echo "-----> Now using nvm v.`nvm --version`"'
+  end
+end
 
 
 desc "Deploys the current version to the server."
