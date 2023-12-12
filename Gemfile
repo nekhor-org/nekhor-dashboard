@@ -13,7 +13,9 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem 'puma', '~> 4.1'
+
+gem 'puma_worker_killer'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -198,3 +200,15 @@ gem 'rqrcode', '~> 2.2'
 gem 'retries'
 
 gem 'rack-cors', '1.0.3'
+
+gem 'mina', '1.2.3'
+
+gem 'mina-webpacker'
+
+# Mina tasks for handle with Puma.
+# Read more: https://github.com/sandelius/mina-puma
+gem 'mina-puma', '1.1.0'
+
+# mina-sidekiq is a gem that adds tasks to aid in the deployment of Sidekiq using Mina.
+# Read more: https://github.com/Mic92/mina-sidekiq
+gem 'mina-sidekiq', '1.0.3'
