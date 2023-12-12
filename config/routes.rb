@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   resources :languages
   devise_for :users
   namespace :api do
-    resources :locals
+    resources :locals do
+      collection do
+        get :home 
+      end
+    end
     resources :countries
     resources :labels
     resources :favorites

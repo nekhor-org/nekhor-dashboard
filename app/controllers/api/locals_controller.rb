@@ -9,4 +9,14 @@ class Api::LocalsController < ApiController
 
     render json: locals
   end
+
+  def home
+    @locals = Local.all
+
+    locals =  @locals.map do |local|
+      local.local_names.where(language_id: @language.id).last
+    end
+
+    render json: locals, each_serializer: LocalNameCustomSerializer
+  end
 end
