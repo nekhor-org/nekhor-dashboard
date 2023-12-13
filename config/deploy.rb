@@ -77,8 +77,7 @@ end
 
 desc 'Copy assets'
 task :link_assets do
-  command %(rm -rf "/var/www/nekhor_dashboard/current/public/assets")
-  command %(ln -s "/var/www/nekhor_dashboard/current/public/assets-js" "/var/www/nekhor_dashboard/current/public/assets")
+  command %(ln -s "/var/www/nekhor_dashboard/current/public/actiontext.css" "/var/www/nekhor_dashboard/current/public/assets")
 end
 
 desc 'Stop sidekiq'
@@ -147,8 +146,9 @@ task :deploy do
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
+    invoke :'link_assets'
     # invoke :'sidekiq:quiet'
-
+    
     on :launch do
       # invoke :'rbenv:load'
       # invoke :'puma:phased_restart'
