@@ -20,7 +20,7 @@ set :forward_agent, true
 # set :identity_file, '~/.ssh/ugate-prod' #producao
 # set :identity_file, '~/.ssh/novosaque-prod.pem' #homologacao
 
-set :shared_dirs, fetch(:shared_dirs, []).push('log', 'node_modules', 'storage', 'tmp', 'public/uploads')
+set :shared_dirs, fetch(:shared_dirs, []).push('log', 'node_modules', 'storage', 'tmp', 'public/uploads', 'public/assets', 'public/packs')
 set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/application.yml', 'config/secrets.yml')
 set :shared_paths, ['tmp/sockets', 'tmp/pids']
 
