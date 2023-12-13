@@ -146,7 +146,7 @@ task :deploy do
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
-    invoke :'link_assets'
+    # invoke :'link_assets'
     # invoke :'sidekiq:quiet'
     
     on :launch do
