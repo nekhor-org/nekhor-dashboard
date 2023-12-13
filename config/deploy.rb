@@ -145,7 +145,9 @@ task :deploy do
     invoke :'rbenv:load'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
+    # invoke :'rails:assets_precompile'
+    invoke :'rails:asset:precompile'
+    
     invoke :'deploy:cleanup'
     # invoke :'sidekiq:quiet'
 
