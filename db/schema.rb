@@ -176,7 +176,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_17_124724) do
     t.string "title"
     t.string "subtitle"
     t.text "content"
-    t.boolean "has_home"
+    t.boolean "has_home", default: false
     t.index ["country_id"], name: "index_posts_on_country_id"
     t.index ["local_id"], name: "index_posts_on_local_id"
   end
