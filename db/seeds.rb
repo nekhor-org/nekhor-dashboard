@@ -38,10 +38,6 @@ intros = [
 ]
 
 buddha_india = [
-  "buddha/lumbini"
-]
-
-buddha_nepal = [
   "buddha/bodh_gaya",
   "buddha/intro_buddha",
   "buddha/kushinagar",
@@ -50,6 +46,10 @@ buddha_nepal = [
   "buddha/rajgir",
   "buddha/shravasti",
   "buddha/samkashya",
+]
+
+buddha_nepal = [
+  "buddha/lumbini"
 ]
 
 guru_nepal = [
