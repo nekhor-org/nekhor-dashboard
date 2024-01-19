@@ -1,8 +1,8 @@
 class Country < ApplicationRecord
   belongs_to :local
 
-  has_many :country_names
-  has_many :posts
+  has_many :country_names, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   validates :name, presence: true
 
