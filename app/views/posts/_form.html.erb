@@ -36,7 +36,10 @@
 
       <%= f.input :title, input_html: { class: "form-control" } %>
       <%= f.input :subtitle, input_html: { class: "form-control" } %>
-      <%= f.input :content, as: :rich_text_area, input_html: { class: "form-control" }  %>
+      <%##= f.input :content, as: :rich_text_area, input_html: { class: "form-control" }  %>
+      <%= f.cktext_area :content, id: 'sometext', input_html: {ckeditor: { toolbar: 'Full' }}  %>
+<%#= f.input :content, input_html: {class: 'form-control form-control-user ckeditor', ckeditor: { toolbar: 'Fll' }}, label: "Content" %>
+       <%#= f.input :content, class: 'form-control form-control-user', label: "Content", as: :ckeditor %>
     <% end %>
   </div>
 

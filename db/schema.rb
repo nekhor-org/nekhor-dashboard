@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_17_124724) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_27_130053) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_17_124724) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_audios_on_post_id"
+  end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "data_fingerprint"
+    t.string "type", limit: 30
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
   create_table "countries", force: :cascade do |t|

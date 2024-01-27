@@ -13,6 +13,7 @@ module NekhorDashboard
 
     config.assets.css_compressor = nil
     
+    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
 
     # Configuration for the application, engines, and railties goes here.
     #

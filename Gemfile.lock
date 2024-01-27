@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: 8200ccdbf789669d154b800aab329db8f46aabdc
+  specs:
+    ckeditor (5.1.1)
+      orm_adapter (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -443,6 +450,7 @@ DEPENDENCIES
   cancancan (= 3.0.1)
   capybara
   chartkick
+  ckeditor!
   cocoon (= 1.2.14)
   cpf_cnpj
   credit_card_validations
@@ -467,6 +475,7 @@ DEPENDENCIES
   mina-puma (= 1.1.0)
   mina-sidekiq (= 1.0.3)
   mina-webpacker
+  mini_magick
   paranoia (~> 2.2)
   pg (~> 1.1)
   puma (~> 4.1)

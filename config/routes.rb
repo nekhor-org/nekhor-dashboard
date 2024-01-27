@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :audios
   resources :images
   # resources :post_contents

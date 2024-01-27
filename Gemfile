@@ -212,3 +212,7 @@ gem 'mina-puma', '1.1.0'
 # mina-sidekiq is a gem that adds tasks to aid in the deployment of Sidekiq using Mina.
 # Read more: https://github.com/Mic92/mina-sidekiq
 gem 'mina-sidekiq', '1.0.3'
+
+
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem "mini_magick"

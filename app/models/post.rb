@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :itineraries, dependent: :destroy
 
-  has_rich_text :content
+  # has_rich_text :content
 
   ## ACTIVE STORAGE
   has_one_attached :image
