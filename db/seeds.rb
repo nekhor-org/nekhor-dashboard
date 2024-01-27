@@ -17,9 +17,15 @@ def get_data(path)
   paragraph = ""
   data.each do |content|
     if content[0].include?("content_") && !content[0].include?("link_content")
-      paragraph += "\n\n#{content[1]}"
+      paragraph += "<br /><br />#{content[1]}"
+    elsif content[0].include?("image")
+      picture = Ckeditor.picture_model.new
+      picture.data = {io: File.open(Rails.root.join('db', content[1])), filename: 'my_image.png', content_type: 'image/png'}
+      picture.save
+
+      paragraph += "<p style=\"text-align: center;\"><img src=\"#{picture.url}\" style=\"width: 400px; height: 283px;\" /></p>"
     else
-      paragraph += "\n#{content[1]}"
+      paragraph += "<br />#{content[1]}"
     end
   end
 
@@ -31,7 +37,7 @@ en = Language.find(1)
 ch = Language.find(2)
 
 intros = [
-  { json: "intro_guru_detail", image: "images/buddha-lumbini.jpg" },
+  { json: "intro_guru_detail", image: "images/intro-guru-2.jpg" },
   { json: "intro/practicalities", image: "images/intro-pratic.jpg"},
   { json: "intro/thepath", image: "images/intro-the-path.jpg"},
   { json: "intro/tips", image: "images/intro-tips.jpg"},
