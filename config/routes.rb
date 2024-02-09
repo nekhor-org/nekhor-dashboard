@@ -24,6 +24,7 @@ Rails.application.routes.draw do
         get :home 
       end
     end
+    resources :languages
     resources :countries
     resources :labels
     resources :favorites
