@@ -124,14 +124,14 @@ intros.each do |data_intro|
 end
 
 guru = Local.create(name: "Guru")
-LocalName.create(local_id: intro.id, language_id: en.id, name: "Guru")
-LocalName.create(local_id: intro.id, language_id: ch.id, name: "Guru")
+LocalName.create(local_id: guru.id, language_id: en.id, name: "Guru")
+LocalName.create(local_id: guru.id, language_id: ch.id, name: "Guru")
 
-country_nepal_guru = Country.create(name: "Nepal", local_id: intro.id)
+country_nepal_guru = Country.create(name: "Nepal", local_id: guru.id)
 CountryName.create(name: "Nepal", country_id: country_nepal_guru.id, language_id: en.id)
 CountryName.create(name: "Nepal", country_id: country_nepal_guru.id, language_id: ch.id)
 
-country_india_guru = Country.create(name: "India", local_id: intro.id)
+country_india_guru = Country.create(name: "India", local_id: guru.id)
 CountryName.create(name: "India", country_id: country_india_guru.id, language_id: en.id)
 CountryName.create(name: "India", country_id: country_india_guru.id, language_id: ch.id)
 
@@ -176,14 +176,14 @@ guru_nepal.each do |data_intro|
 end
 
 buddha = Local.create(name: "The Buddha")
-LocalName.create(local_id: intro.id, language_id: en.id, name: "Guru")
-LocalName.create(local_id: intro.id, language_id: ch.id, name: "The Buddha")
+LocalName.create(local_id: buddha.id, language_id: en.id, name: "Guru")
+LocalName.create(local_id: buddha.id, language_id: ch.id, name: "The Buddha")
 
-country_nepal_buddha = Country.create(name: "Nepal", local_id: intro.id)
+country_nepal_buddha = Country.create(name: "Nepal", local_id: buddha.id)
 CountryName.create(name: "Nepal", country_id: country_nepal_buddha.id, language_id: en.id)
 CountryName.create(name: "Nepal", country_id: country_nepal_buddha.id, language_id: ch.id)
 
-country_india_buddha = Country.create(name: "India", local_id: intro.id)
+country_india_buddha = Country.create(name: "India", local_id: buddha.id)
 CountryName.create(name: "India", country_id: country_india_buddha.id, language_id: en.id)
 CountryName.create(name: "India", country_id: country_india_buddha.id, language_id: ch.id)
 

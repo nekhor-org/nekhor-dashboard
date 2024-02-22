@@ -28,8 +28,12 @@ Rails.application.routes.draw do
     resources :countries
     resources :labels
     resources :favorites
-    resources :itineraries
-    resources :posts
+    resources :itineraries 
+    resources :posts do
+      collection do
+        get :get_itineraries
+      end
+    end
 
     post '/login' => 'sessions#signin'
     
