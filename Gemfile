@@ -31,6 +31,7 @@ gem "cssbundling-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+gem "kimurai"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
@@ -216,3 +217,5 @@ gem 'mina-sidekiq', '1.0.3'
 
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem "mini_magick"
+
+gem 'nokogiri'

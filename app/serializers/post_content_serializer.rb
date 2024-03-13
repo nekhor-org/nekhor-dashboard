@@ -1,7 +1,7 @@
 class PostContentSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
   
-  attributes :id, :title, :subtitle, :content, :image, :images, :audio, :lng, :lat, :post_id, :country, :local
+  attributes :id, :title, :subtitle, :content, :image, :images, :audio, :lng, :lat, :post_id, :country, :local, :local_id, :country_id
   has_one :post
   has_one :language
 
@@ -11,6 +11,14 @@ class PostContentSerializer < ActiveModel::Serializer
 
   def country
     object.post&.country.name
+  end
+
+  def country_id
+    object.post&.country&.id
+  end
+
+  def local_id
+    object.post&.local&.id
   end
 
   def local

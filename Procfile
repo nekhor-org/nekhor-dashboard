@@ -1,2 +1,3 @@
-worker: bundle exec sidekiq -C config/sidekiq.yml
-web: bundle exec puma -C config/puma.rb
+web: bin/rails server -p 3000 -b 0.0.0.0
+js: yarn build --watch
+css: yarn build:css --watch
