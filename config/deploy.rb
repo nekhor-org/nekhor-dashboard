@@ -3,10 +3,10 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/puma'
 require 'mina_sidekiq/tasks'
-require 'mina/rbenv'
+require 'mina/rvm'
 
 set :application, 'nekhor_dashboard'
-set :domain, '146.190.143.50'#'191.252.204.147' # nekhor_dashboard-prod
+set :domain, '64.227.106.233'#'191.252.204.147' # nekhor_dashboard-prod
 set :user, 'deploy'#'root'
 
 set :deploy_to, "/var/www/nekhor_dashboard"
@@ -33,14 +33,21 @@ set :shared_paths, ['tmp/sockets', 'tmp/pids']
 # task :remote_environment do
 #   invoke :'rvm:use', 'ruby-2.7.1'
 # end
-set :rbenv_path, "/home/deploy/.rbenv"
-
+# set :rbenv_path, "/home/deploy/.rbenv"
+set :rvm_use_path, '/home/deploy/.rvm/scripts/rvm'
+set :rvm_path, '/home/deploy/.rvm/scripts/rvm'
 
 
 task :remote_environment do
-  invoke :'rbenv:load'
-  invoke :'nvm:load'
+  invoke :'rvm:use', 'ruby-2.7.3'
 end
+
+
+
+# task :remote_environment do
+#   invoke :'rbenv:load'
+#   invoke :'nvm:load'
+# end
 
 # task :'rbenv:load' do
 #   comment %{Loading rbenv}
@@ -119,15 +126,15 @@ task :sidekiq_restart do
   command %(sudo service sidekiq restart)
 end
 
-namespace :nvm do
-  task :load do
-    command 'echo "-----> Loading nvm"'
-    command %{
-      source ~/.nvm/nvm.sh
-    }
-    command 'echo "-----> Now using nvm v.`nvm --version`"'
-  end
-end
+# namespace :nvm do
+#   task :load do
+#     command 'echo "-----> Loading nvm"'
+#     command %{
+#       source ~/.nvm/nvm.sh
+#     }
+#     command 'echo "-----> Now using nvm v.`nvm --version`"'
+#   end
+# end
 
 
 desc "Deploys the current version to the server."
@@ -141,7 +148,7 @@ task :deploy do
     invoke :'git:clone'
     # invoke :'sidekiq:quiet'
     invoke :'deploy:link_shared_paths'
-    invoke :'rbenv:load'
+    # invoke :'rbenv:load'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
