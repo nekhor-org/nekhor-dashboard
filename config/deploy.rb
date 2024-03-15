@@ -39,14 +39,14 @@ set :rvm_path, '/home/deploy/.rvm/scripts/rvm'
 
 
 task :remote_environment do
-  invoke :'rvm:use', 'ruby-2.7.3'
+  invoke :'rvm:use', 'ruby-3.0.6'
+  invoke :'nvm:load'
 end
 
 
 
 # task :remote_environment do
 #   invoke :'rbenv:load'
-#   invoke :'nvm:load'
 # end
 
 # task :'rbenv:load' do
@@ -126,15 +126,15 @@ task :sidekiq_restart do
   command %(sudo service sidekiq restart)
 end
 
-# namespace :nvm do
-#   task :load do
-#     command 'echo "-----> Loading nvm"'
-#     command %{
-#       source ~/.nvm/nvm.sh
-#     }
-#     command 'echo "-----> Now using nvm v.`nvm --version`"'
-#   end
-# end
+namespace :nvm do
+  task :load do
+    command 'echo "-----> Loading nvm"'
+    command %{
+      source ~/.nvm/nvm.sh
+    }
+    command 'echo "-----> Now using nvm v.`nvm --version`"'
+  end
+end
 
 
 desc "Deploys the current version to the server."
