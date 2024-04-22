@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     resources :posts do
       collection do
         get :get_itineraries
+        get :get_lat_lng
       end
     end
 

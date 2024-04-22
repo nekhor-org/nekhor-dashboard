@@ -10,6 +10,12 @@ class Api::PostsController < ApiController
     render json: posts
   end
 
+  def get_lat_lng
+    posts = Post.where.not(lat: nil, lng: nil).map{|post| { name: post.title, lat_lng: [post.lat, post.lng] }}
+    
+    render json: posts
+  end
+
   def get_itineraries
     @locals = Local.where.not(id: 1)
 
